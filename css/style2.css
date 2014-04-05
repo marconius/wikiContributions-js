@@ -39,17 +39,19 @@ body {
 }
 
 #cool{
-  background-image:url(../images/couleur.jpg);
+  background-image:url(../images/couleurmini.jpg);
   float: right;
 }
 
 #header{
-    width: 960px;
-    margin: auto;
-    text-align: center;
-    font-size: 35px;
-    padding-top: 30px;
-    margin-bottom: 20px;
+  width: 1000px;
+  height: 118px;
+  margin: auto;
+  color: #000000;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  text-align: center;
 }
 
 h1,h2 {
@@ -170,7 +172,7 @@ h2 {
     width: 250px;
     margin-top: 15px;
     margin-left: 5px;
-    height: calc(100% - 60px);
+    height: calc(100% - 130px);
     border-radius: 6px;
     box-shadow: inset 0px 0px 10px rgba(0, 0, 0, .2);
     overflow: hidden;
@@ -198,7 +200,7 @@ h2 {
     margin-left: 10px;
     margin-right: 10px;
     width: calc(100% - 285px);
-    height: calc(100% - 51px);
+    height: calc(100% - 122px);
     overflow: hidden;
     border-radius: 6px;
     box-shadow: inset 0px 0px 50px rgba(0, 0, 0, .3);
