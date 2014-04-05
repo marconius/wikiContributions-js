@@ -56,6 +56,6 @@ function getUrlForAllRevisions(pageid) {
 		"action=query&" +
 		"pageids=" + escape(pageid) + "&" +
 		"prop=revisions&" +
-		"rvprop=ids&" +
+		"rvprop=ids|user|userid&" +
 		"rvlimit=max";
 }
