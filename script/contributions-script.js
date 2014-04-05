@@ -320,11 +320,11 @@ function getArticle(item) {
 
   //
   getRevisionsBefore(pageid, revid, function(revisions) {
-	  alert("Nb contributions avant : " + revisions.length);
+	  $("#article_stats_before").html(revisions.length);
   });
 
   getRevisionsAfter(pageid, revid, function(revisions) {
-	  alert("Nb contributions apres : " + revisions.length);
+	  $("#article_stats_after").html(revisions.length);
   });
   //
 
