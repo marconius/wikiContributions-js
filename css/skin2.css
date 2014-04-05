@@ -17,3 +17,7 @@ body {
 #container_article{
   background: rgba(255,255,255,.7);
 }
+
+#list_articles {
+  background: rgba(255,255,255,.7);
+}
