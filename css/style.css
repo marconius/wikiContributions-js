@@ -161,11 +161,32 @@ html, body{
     border-radius: 6px;
 }
 
-#article_head{
+#article_head_container{
     position: relative;
     top: 10px;
     margin-left: 10px;
     margin-bottom: 5px;
+}
+
+#article_stats{
+    margin: 10px;
+}
+
+#article_stats h3, #article_stats p {
+    font-weight: normal;
+    font-size: 0.8em;
+    margin:0;
+}
+#article_stats h3 {
+    font-style: italic;
+}
+
+#article_stats .value {
+    font-weight: bold;
+}
+
+.help-btn .info {
+    display: none;
 }
 
 #contr_value{

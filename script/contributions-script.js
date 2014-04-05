@@ -297,6 +297,7 @@ $(document).ready(function () {
       $("#advanced_search_elems_container").slideUp(400);
     }
   });
+
 });
 
 function getArticle(item) {
