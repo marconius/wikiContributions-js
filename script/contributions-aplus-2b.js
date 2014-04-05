@@ -1,6 +1,6 @@
-$(document).ready(function() {
+/*$(document).ready(function() {
 	test();
-});
+});*/
 
 function test() {
   getRevisionsBefore("25227114", "602185304", function(revisions) {
