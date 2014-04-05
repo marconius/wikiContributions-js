@@ -326,6 +326,22 @@ function getArticle(item) {
   getRevisionsAfter(pageid, revid, function(revisions) {
 	  $("#article_stats_after").html(revisions.length);
   });
+
+  getContributorBefore(pageid, revid, function(contributor) {
+	  writeContributor("article_stats_contributor_before", contributor);
+  });
+
+  getContributorAfter(pageid, revid, function(contributor) {
+	  writeContributor("article_stats_contributor_after", contributor);
+  });
+
+  getFirstContributor(pageid, revid, function(contributor) {
+	  writeContributor("article_stats_contributor_first", contributor);
+  });
+
+  getLastContributor(pageid, revid, function(contributor) {
+	  writeContributor("article_stats_contributor_last", contributor);
+  });
   //
 
   $.when(
