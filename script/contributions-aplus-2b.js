@@ -1,16 +1,13 @@
-/*$(document).ready(function() {
-	test();
-});*/
+/*
+INF6150
+Équipe Aplus
+Hiver 2014
 
-function test() {
-  getRevisionsBefore("25227114", "602185304", function(revisions) {
-	  alert("Nb contributions avant : " + revisions.length);
-  });
+Développement des éléments 2b i et ii du carnet de produit.
 
-  getRevisionsAfter("25227114", "602185304", function(revisions) {
-	  alert("Nb contributions apres : " + revisions.length);
-  });
-}
+2b-i: Obtenir le nombre d'intervention  sur un article, AVANT une contribution
+2b-ii: Obtenir le nombre d'intervention  sur un article, APRÈS une contribution
+*/
 
 function getRevisionsBefore(pageid, revid, complete) {
 	getAllRevisions(pageid, function(revisions) {
@@ -59,6 +56,6 @@ function getUrlForAllRevisions(pageid) {
 		"action=query&" +
 		"pageids=" + escape(pageid) + "&" +
 		"prop=revisions&" +
-		"rvprop=ids&" +
+		"rvprop=ids|user|userid&" +
 		"rvlimit=max";
 }

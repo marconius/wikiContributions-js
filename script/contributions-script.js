@@ -314,7 +314,7 @@ $(document).ready(function () {
       }
     }
   });
-  
+
   $("#articles").scroll(function(event){
     var elem = $(this);
     if (elem[0].scrollHeight - elem.scrollTop() - 100 < elem.outerHeight()){
@@ -333,6 +333,7 @@ $(document).ready(function () {
       $("#advanced_search_elems_container").slideUp(400);
     }
   });
+
 });
 
 function getArticle(item) {
@@ -351,6 +352,12 @@ function getArticle(item) {
   var revid = $(item).find(".list_articles_item_revid").val();
   var oldRevisionContent = wiki + "/w/api.php?action=parse&format=json&oldid=" + parentid + "&prop=text";
   var userRevisionContent = wiki + "/w/api.php?action=parse&format=json&oldid=" + revid + "&prop=text";
+
+  //INF6150, Équipe APLUS
+  var pageid = $(item).find(".list_articles_item_pageid").val();
+  var user = $("#user").val();
+  //END INF6150, Équipe APLUS
+
   $.when(
     $.ajax({
       beforeSend: function (xhr) {
@@ -370,7 +377,43 @@ function getArticle(item) {
       success: function (response) {
         callback_Q4(response);
       }
+    }),
+    
+    //INF6150, Équipe APLUS
+      //Fonctionnalité 2a-i
+    getArticleLastUserContribution(wiki, pageid, user, function(lastUserContributioninDays) {
+	    $("#article_stats_last_user_contribution").html(lastUserContributioninDays + " jour(s)");
+	  }),
+	  //Fonctionnalité 2a-ii
+    getArticleLastContribution(wiki, pageid, function(lastContributioninDays) {
+	    $("#article_stats_last_contribution").html(lastContributioninDays + " jour(s)");
+	  }),
+	    //Fonctionnalité 2b-i
+	  getRevisionsBefore(pageid, revid, function(revisions) {
+	    $("#article_stats_before").html(revisions.length);
+    }),
+      //Fonctionnalité 2b-ii
+    getRevisionsAfter(pageid, revid, function(revisions) {
+	    $("#article_stats_after").html(revisions.length);
+    }),
+      //Fonctionnalité 2d-i
+    getContributorBefore(pageid, revid, function(contributor) {
+  	  writeContributor("article_stats_contributor_before", contributor);
+    }),
+      //Fonctionnalité 2d-ii
+    getContributorAfter(pageid, revid, function(contributor) {
+  	  writeContributor("article_stats_contributor_after", contributor);
+    }),
+      //Fonctionnalité 2d-iii
+    getFirstContributor(pageid, revid, function(contributor) {
+  	  writeContributor("article_stats_contributor_first", contributor);
+    }),
+      //Fonctionnalité 2d-iv
+    getLastContributor(pageid, revid, function(contributor) {
+  	  writeContributor("article_stats_contributor_last", contributor);
     })
+    //END INF6150, Équipe APLUS
+    
   ).then(function () {
     activeAjaxConnections--;
     analysisTable = getDiff(oldText, newText);

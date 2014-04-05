@@ -13,7 +13,6 @@
 	position: fixed;
 	top: 10px;
 	left: 10px;
-  z-index: 99999;
 }
 
 #langue > div{
@@ -45,4 +44,8 @@
 #fr.hidden,
 #en.hidden{
 	display: none;
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> dev-aplus

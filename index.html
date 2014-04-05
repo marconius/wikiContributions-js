@@ -53,7 +53,100 @@
         <img src="" id="loading">
         <div id="contente_article">
           <div style="background-color: #F1F5E9; padding-bottom: 10px; box-shadow: 0px 0px 10px rgba(0, 0, 0, .2), inset 0px 0px 10px rgba(0, 0, 0, .2);">
-            <div id="article_head"></div>
+            <div id="article_head_container">
+              <div id="article_head">
+              </div>
+              <div id="article_stats">
+                <h3>
+                  Statistiques de la contribution
+                </h3>
+                <p>
+                  Derni&egrave;re intervention de l'utilisateur
+                  <sup>
+                    (<a class="help-btn" href="#" title="Nombre de jours depuis la derni&egrave;re intervention de l'auteur de l'article.">?<span class="info"></span></a>)
+                  </sup>
+                  &nbsp;:
+                  <span id="article_stats_last_user_contribution">
+                    0
+                  </span>
+                  <br />
+                  Derni&egrave;re intervention d'un contributeur
+                  <sup>
+                    (<a class="help-btn" href="#" title="Nombre de jours depuis la derni&egrave;re intervention d'un contributeur sur l'article.">?<span class="info"></span></a>)
+                  </sup>
+                  &nbsp;:
+                  <span id="article_stats_last_contribution">
+                    0
+                  </span>
+                </p>
+                <p>
+                  Nombre d'interventions p/r &aacute; l'utilisateur&nbsp;:
+                  <br />
+                  &nbsp;&nbsp;&nbsp;Avant
+                  <sup>
+                    (<a class="help-btn" href="#" title="Nombre d'intervention sur l'article avant celle de l'utilisateur.">?<span class="info"></span></a>)
+                  </sup>
+                  &nbsp;:
+                  <span id="article_stats_before">
+                    0
+                  </span>
+                  <br />
+                  &nbsp;&nbsp;&nbsp;Apr&egrave;s
+                  <sup>
+                    (<a class="help-btn" href="#" title="Nombre d'intervention sur l'article avant celle de l'utilisateur.">?<span class="info"></span></a>)
+                  </sup>
+                  &nbsp;:
+                  <span id="article_stats_after">
+                    0
+                  </span>
+                </p>
+                <p>
+	                Contributeur avant ma contribution : <span id="article_stats_contributor_before">0</span>
+	                <br />
+	                Contributeur après ma contribution : <span id="article_stats_contributor_after">0</span>
+	                <br />
+	                Premier contributeur : <span id="article_stats_contributor_first">0</span>
+	                <br />
+	                Dernier contributeur : <span id="article_stats_contributor_last">0</span>
+                </p>
+                <!-- DISTANCE D'EDITION -->
+                <p>
+                  Distance d'edition:
+                  vs la contribution avant:
+                  <sup>
+                    (<a class="help-btn" href="#" title="Description to be completed">?<span class="info"></span></a>)
+                  </sup>
+                  :
+                  <span id="article_stats_distance-prev">
+                    0
+                  </span>
+                  vs la contribution après:
+                  <sup>
+                    (<a class="help-btn" href="#" title="Description to be completed">?<span class="info"></span></a>)
+                  </sup>
+                  :
+                  <span id="article_stats_distance-next">
+                    0
+                  </span>
+                  vs la création de l’article:
+                  <sup>
+                    (<a class="help-btn" href="#" title="info ici">?</a>)
+                  </sup>
+                  :
+                  <span id="article_stats_distance-creation">
+                    0
+                  </span>
+                  vs la plus récente:
+                  <sup>
+                    (<a class="help-btn" href="#" title="Description to be completed">?<span class="info"></span></a>)
+                  </sup>
+                  :
+                  <span id="article_stats_distance-most-recent">
+                    0
+                  </span>
+                </p>
+              </div>
+            </div>
             <div id="contr_value"></div>
             <div id="contr_survived"></div>
           </div>
@@ -74,5 +167,6 @@
     <script src="script/contributions-script.js"></script>
     <script src="script/contributions-aplus-2a.js"></script>
     <script src="script/contributions-aplus-2b.js"></script>
+    <script src="script/contributions-aplus-2d.js"></script>
   </body>
 </html>
