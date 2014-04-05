@@ -278,7 +278,7 @@ $(document).ready(function () {
       }
     }
   });
-  
+
   $("#articles").scroll(function(event){
     var elem = $(this);
     if (elem[0].scrollHeight - elem.scrollTop() - 100 < elem.outerHeight()){
@@ -313,8 +313,20 @@ function getArticle(item) {
   var title = $(item).find(".list_articles_item_title").text();
   var parentid = $(item).find(".list_articles_item_parentid").val();
   var revid = $(item).find(".list_articles_item_revid").val();
+  var pageid = $(item).find(".list_articles_item_pageid").val();
   var oldRevisionContent = wiki + "/w/api.php?action=parse&format=json&oldid=" + parentid + "&prop=text";
   var userRevisionContent = wiki + "/w/api.php?action=parse&format=json&oldid=" + revid + "&prop=text";
+
+  //
+  getRevisionsBefore(pageid, revid, function(revisions) {
+	  alert("Nb contributions avant : " + revisions.length);
+  });
+
+  getRevisionsAfter(pageid, revid, function(revisions) {
+	  alert("Nb contributions apres : " + revisions.length);
+  });
+  //
+
   $.when(
     $.ajax({
       beforeSend: function (xhr) {
