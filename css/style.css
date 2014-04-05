@@ -169,8 +169,7 @@ html, body{
 }
 
 #article_stats{
-    float: right;
-    margin-right: 10px;
+    margin: 10px;
 }
 
 #article_stats h3, #article_stats p {
@@ -184,6 +183,10 @@ html, body{
 
 #article_stats .value {
     font-weight: bold;
+}
+
+.help-btn .info {
+    display: none;
 }
 
 #contr_value{
