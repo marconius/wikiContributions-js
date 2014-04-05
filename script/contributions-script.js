@@ -242,7 +242,7 @@ $(document).ready(function () {
   });
   $('#cool').click(function(){
     //$('body').css('background-image', 'url(./images/bg_body2.jpg)');
-    changeCss("css/style2.css");
+    changeCss("css/skin2.css");
   });
   $('#user').click(function(){
     verifieTexte('Chris857', '#user');
