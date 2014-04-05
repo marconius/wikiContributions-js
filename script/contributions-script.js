@@ -314,11 +314,13 @@ function getArticle(item) {
   var title = $(item).find(".list_articles_item_title").text();
   var parentid = $(item).find(".list_articles_item_parentid").val();
   var revid = $(item).find(".list_articles_item_revid").val();
-  var pageid = $(item).find(".list_articles_item_pageid").val();
   var oldRevisionContent = wiki + "/w/api.php?action=parse&format=json&oldid=" + parentid + "&prop=text";
   var userRevisionContent = wiki + "/w/api.php?action=parse&format=json&oldid=" + revid + "&prop=text";
 
-  //
+  //INF6150, Équipe APLUS
+  var pageid = $(item).find(".list_articles_item_pageid").val();
+  var user = $("#user").val();
+  
   getRevisionsBefore(pageid, revid, function(revisions) {
 	  $("#article_stats_before").html(revisions.length);
   });
@@ -326,7 +328,7 @@ function getArticle(item) {
   getRevisionsAfter(pageid, revid, function(revisions) {
 	  $("#article_stats_after").html(revisions.length);
   });
-  //
+  //END INF6150, Équipe APLUS
 
   $.when(
     $.ajax({
@@ -347,7 +349,14 @@ function getArticle(item) {
       success: function (response) {
         callback_Q4(response);
       }
-    })
+    }),
+    
+    //INF6150, Équipe APLUS
+    getArticleLastAuthorContribution(wiki, pageid, user, function(lastAuthorContributioninDays) {
+	    alert("nb jour auteur : " + lastAuthorContributioninDays);
+	  })
+    //END INF6150, Équipe APLUS
+    
   ).then(function () {
     activeAjaxConnections--;
     analysisTable = getDiff(oldText, newText);
