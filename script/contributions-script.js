@@ -297,6 +297,11 @@ $(document).ready(function () {
       $("#advanced_search_elems_container").slideUp(400);
     }
   });
+  
+  $(".help_btn").click( function() {
+    alert(this.attr('title'));
+  });
+
 });
 
 function getArticle(item) {
