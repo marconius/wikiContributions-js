@@ -34,12 +34,33 @@ html, body{
 }
 
 #header{
-    width: 960px;
-    margin: auto;
-    text-align: center;
-    font-size: 35px;
-    padding-top: 30px;
-    margin-bottom: 20px;
+  width: 1000px;
+  height: 118px;
+  margin: auto;
+  background-image:url(../images/bulles.gif);
+  background-position:left;
+	background-repeat: no-repeat ;
+  background-color: #FFFFFF;
+  color: #000000;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+h1,h2 {
+	margin: 0px;
+	font-weight: normal;
+  font-family: Comic Sans MS, Helvetica, sans-serif;
+}
+
+h1 {
+  padding-top: 10px;
+	font-size: 44px;
+}
+
+h2 {
+	font-size: 18px;
 }
 
 #result {
