@@ -1,3 +1,14 @@
+/*
+INF6150
+Équipe Aplus
+Hiver 2014
+
+Développement des éléments 2b i et ii du carnet de produit.
+
+2b-i: Obtenir le nombre d'intervention  sur un article, AVANT une contribution
+2b-ii: Obtenir le nombre d'intervention  sur un article, APRÈS une contribution
+*/
+
 function getRevisionsBefore(pageid, revid, complete) {
 	getAllRevisions(pageid, function(revisions) {
 		var results = [];
