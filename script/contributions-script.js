@@ -359,6 +359,22 @@ function getArticle(item) {
       //Fonctionnalité 2b-ii
     getRevisionsAfter(pageid, revid, function(revisions) {
 	    $("#article_stats_after").html(revisions.length);
+    }),
+      //Fonctionnalité 2d-i
+    getContributorBefore(pageid, revid, function(contributor) {
+  	  writeContributor("article_stats_contributor_before", contributor);
+    }),
+      //Fonctionnalité 2d-ii
+    getContributorAfter(pageid, revid, function(contributor) {
+  	  writeContributor("article_stats_contributor_after", contributor);
+    }),
+      //Fonctionnalité 2d-iii
+    getFirstContributor(pageid, revid, function(contributor) {
+  	  writeContributor("article_stats_contributor_first", contributor);
+    }),
+      //Fonctionnalité 2d-iv
+    getLastContributor(pageid, revid, function(contributor) {
+  	  writeContributor("article_stats_contributor_last", contributor);
     })
     //END INF6150, Équipe APLUS
     
