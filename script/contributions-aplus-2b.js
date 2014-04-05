@@ -1,17 +1,3 @@
-/*$(document).ready(function() {
-	test();
-});*/
-
-function test() {
-  getRevisionsBefore("25227114", "602185304", function(revisions) {
-	  alert("Nb contributions avant : " + revisions.length);
-  });
-
-  getRevisionsAfter("25227114", "602185304", function(revisions) {
-	  alert("Nb contributions apres : " + revisions.length);
-  });
-}
-
 function getRevisionsBefore(pageid, revid, complete) {
 	getAllRevisions(pageid, function(revisions) {
 		var results = [];
