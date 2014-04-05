@@ -7,6 +7,15 @@ html, body{
     overflow: hidden;
 }
 
+body {
+	background: #696969;
+	background-attachment:fixed;
+	background-position:bottom;
+	background-repeat: no-repeat ;
+  background-size: cover;
+	font-size: 13px;
+}
+
 #skill{
   width: 400px;
   height: 50px;
@@ -29,7 +38,7 @@ html, body{
 }
 
 #cool{
-  background-image:url(../images/couleur.jpg);
+  background-image:url(../images/couleurmini.jpg);
   float: right;
 }
 
@@ -166,7 +175,7 @@ h2 {
     width: 250px;
     margin-top: 15px;
     margin-left: 5px;
-    height: calc(100% - 60px);
+    height: calc(100% - 130px);
     border-radius: 6px;
     box-shadow: inset 0px 0px 10px rgba(0, 0, 0, .2);
     overflow: hidden;
@@ -194,7 +203,7 @@ h2 {
     margin-left: 10px;
     margin-right: 10px;
     width: calc(100% - 285px);
-    height: calc(100% - 51px);
+    height: calc(100% - 122px);
     overflow: hidden;
     border-radius: 6px;
     box-shadow: inset 0px 0px 50px rgba(0, 0, 0, .3);
