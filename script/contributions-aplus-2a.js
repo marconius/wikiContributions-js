@@ -1,17 +1,31 @@
 /*
 INF6150
-Équipe Aplus
+√âquipe Aplus
 Hiver 2014
 
-Développement des éléments 2a i et ii du carnet de produit.
+D√©veloppement des √©l√©ments 2a i et ii du carnet de produit.
 
-2a-i: calcul du nombre de jour depuis la dernière intervention de l'auteur sur un article donné
-2a-ii: calcul du nombre de jour depuis la dernière intervention (peu importe le contributeur) sur un article donné
+2a-i: calcul du nombre de jour depuis la derni√®re intervention de l'utilisateur donn√© sur un article donn√©
+2a-ii: calcul du nombre de jour depuis la derni√®re intervention (peu importe le contributeur) sur un article donn√©
 */
 
-function getArticleLastAuthorContribution(urlWiki, pageid, user, complete) {
+function getArticleLastUserContribution(urlWiki, pageid, user, complete) {
   
   var url = urlWiki + "/w/api.php?format=json&action=query&pageids=" + pageid + "&prop=revisions&rvprop=timestamp|user|userid&rvuser=" + user;
+  
+  getLastContributionFromWiki(url, pageid, complete);
+}
+
+
+function getArticleLastContribution(urlWiki, pageid, complete) {
+  
+  var url = urlWiki + "/w/api.php?format=json&action=query&pageids=" + pageid + "&prop=revisions&rvprop=timestamp|user|userid";
+  
+  getLastContributionFromWiki(url, pageid, complete);
+}
+
+
+function getLastContributionFromWiki(url, pageid, complete) {
   
   $.ajax({
       url: url,
@@ -29,11 +43,6 @@ function getArticleLastAuthorContribution(urlWiki, pageid, user, complete) {
   });
 }
 
-function getArticleLastContribution(urlWiki, pageid) {
-  
-  
-}
-
 
 function daysBetween(date1, date2) {
   var time2 = date2.getTime();
@@ -41,8 +50,3 @@ function daysBetween(date1, date2) {
 
   return parseInt((time2 - time1) / (24 * 3600 * 1000));
 };
-
-
-function testCallback2a() {
-  alert("test de test");
-}

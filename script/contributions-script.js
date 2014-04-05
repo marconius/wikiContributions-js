@@ -320,14 +320,6 @@ function getArticle(item) {
   //INF6150, Équipe APLUS
   var pageid = $(item).find(".list_articles_item_pageid").val();
   var user = $("#user").val();
-  
-  getRevisionsBefore(pageid, revid, function(revisions) {
-	  $("#article_stats_before").html(revisions.length);
-  });
-
-  getRevisionsAfter(pageid, revid, function(revisions) {
-	  $("#article_stats_after").html(revisions.length);
-  });
   //END INF6150, Équipe APLUS
 
   $.when(
@@ -352,9 +344,22 @@ function getArticle(item) {
     }),
     
     //INF6150, Équipe APLUS
-    getArticleLastAuthorContribution(wiki, pageid, user, function(lastAuthorContributioninDays) {
-	    alert("nb jour auteur : " + lastAuthorContributioninDays);
-	  })
+      //Fonctionnalité 2a-i
+    getArticleLastUserContribution(wiki, pageid, user, function(lastUserContributioninDays) {
+	    $("#article_stats_last_user_contribution").html(lastUserContributioninDays + " jour(s)");
+	  }),
+	  //Fonctionnalité 2a-ii
+    getArticleLastContribution(wiki, pageid, function(lastContributioninDays) {
+	    $("#article_stats_last_contribution").html(lastContributioninDays + " jour(s)");
+	  }),
+	    //Fonctionnalité 2b-i
+	  getRevisionsBefore(pageid, revid, function(revisions) {
+	    $("#article_stats_before").html(revisions.length);
+    }),
+      //Fonctionnalité 2b-ii
+    getRevisionsAfter(pageid, revid, function(revisions) {
+	    $("#article_stats_after").html(revisions.length);
+    })
     //END INF6150, Équipe APLUS
     
   ).then(function () {
