@@ -1,0 +1,19 @@
+html, body{
+    font-family:  Arial, Helvetica, sans-serif; 
+}
+
+body {
+  background: #fff;
+  background-image:url(../images/couleur.jpg);
+  background-position:left;
+  background-size: cover;
+}
+
+#header{
+  color: #000000;
+  background: none;
+}
+
+#container_article{
+  background: rgba(255,255,255,.7);
+}

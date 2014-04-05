@@ -235,6 +235,42 @@ $(document).ready(function () {
   $("#datepicker_from").datepicker({changeMonth: true, changeYear: true}).datepicker("option", "dateFormat", "yy-mm-dd");
   $("#datepicker_to").datepicker({changeMonth: true, changeYear: true}).datepicker("option", "dateFormat", "yy-mm-dd");
 
+  //---------------------------------------
+  $('#normal').click(function(){
+    //$('body').css('background-image', 'url(./images/bg_body.jpg)');
+    changeCss("css/style.css");
+  });
+  $('#cool').click(function(){
+    //$('body').css('background-image', 'url(./images/bg_body2.jpg)');
+    changeCss("css/skin2.css");
+  });
+  $('#user').click(function(){
+    verifieTexte('Chris857', '#user');
+  });
+  $('#user').blur(function(){
+    perteFocus('#user', 'Chris857');
+  });
+  $('#url').click(function(){
+    verifieTexte('en.wikipedia.org', '#url');
+  });
+  $('#url').blur(function(){
+    perteFocus('#url', "en.wikipedia.org");
+  });
+  
+  //bouton pour retourner au top
+  $('#btn_up').click(function() {
+    $('html,body').animate({scrollTop: 0}, 'slow');
+  });
+  
+  $(window).scroll(function(){
+    if($(window).scrollTop()<300){
+        $('#btn_up').fadeOut();
+    }else{
+        $('#btn_up').fadeIn();
+    }
+  });
+//---------------------------------------
+  
   $('#url').bind('keypress', function (e) {
     var code = e.keyCode || e.which;
     if (code === 13) {

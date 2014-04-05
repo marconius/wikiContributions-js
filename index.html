@@ -2,25 +2,38 @@
 <html>
   <head>
     <title>Grisou | Wiki contributions Project </title>
-    <link rel="stylesheet" href="css/style.css" />
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css" id="stl">
+    <link rel="stylesheet" href="css/aplus-language.css">
     <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+    <script src="script/script.js"></script>
   </head>
   <body>
-        <div id="header">GRISOU scientific contributions reporter by VOGG 2013</div>
-    <div id="search_div">
-      <input class="input" type="text" id="user" value="Chris857" placeholder="Username or ip of the contributor" title="Enter the username or ip address of the contributor."/>
-      <input class="input" type="text" id="url" value="en.wikipedia.org" placeholder="Wikipedia web site" title="Enter the url for the wikipedia web site the contributor has contributed to (without the http://), Example: en.wikipedia.org"/>
-      <button id="btn_send" onclick="getJsonWiki();">Send</button>
-    </div>
-    <div id="advanced_search_container">
-      <div id="adnvance_search_box">
-        <div id="advanced_search_elems_container" class="hidden_advance">
-          From: <input type="text" id="datepicker_from" class="input">
-          To: <input type="text" id="datepicker_to" class="input">
-          No minor edit: <input type="checkbox" id="minorEdit">
-        </div>
+      <div id="skill">
+        <div id="cool" title="Normal template"></div>
+        <div id="normal" title="Cool template"></div>
       </div>
-      <button id="btn_advanced_search">Advanced search</button>
+      <div id="header">
+        <h1>GRISOU</h1> 
+        <h2>scientific contributions reporter by VOGG 2013</h2>
+      </div>
+    <div id="search_total">
+      <div id="search_div">
+        <input class="input" type="text" id="user" value="Chris857" placeholder="Username or ip of the contributor" title="Enter the username or ip address of the contributor."/>
+        <input class="input" type="text" id="url" value="en.wikipedia.org" placeholder="Wikipedia web site" title="Enter the url for the wikipedia web site the contributor has contributed to (without the http://), Example: en.wikipedia.org"/>
+        <button id="btn_send" onclick="getJsonWiki();">Send</button>
+      </div>
+      <div id="advanced_search_container">
+        <div id="adnvance_search_box">
+          <div id="advanced_search_elems_container" class="hidden_advance">
+            From: <input type="text" id="datepicker_from" class="input">
+            To: <input type="text" id="datepicker_to" class="input">
+            No minor edit: <input type="checkbox" id="minorEdit">
+          </div>
+        </div>
+        <button id="btn_advanced_search">Advanced search</button>
+      </div>
     </div>
     <div id="result">
       <div id="titre"></div>
@@ -49,6 +62,10 @@
           </div>
         </div>
       </div>
+    </div>
+    <div id="langue">
+	    <div id="fr" class="hidden">Français</div>
+	    <div id="en">English</div>
     </div>
     <script src="script/jquery-1.8.2.min.js"></script>
     <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
